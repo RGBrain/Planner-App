@@ -1,42 +1,19 @@
 // Display current date 
 var currentDate = moment().format("dddd Do MMMM");
-// var currentHour = moment().format("HH")
-var currentHour = "14"
+var currentHour = moment().format("HH")
 var currentDateEl = $('#currentDay')
 currentDateEl.text(currentDate);
 
-// ! Console logs for debugging
-console.log("The current hour is: " + currentHour);
-
-$('div').addClass('future');
-
-
-// ! None of the below seems to be working so it's all copied-out for now!
-
-function colourChanger(block) {
-    let datatime = block;
-    datatime.attr("data-time");
-    if (datatime == currentHour) {
-        datatime.addClass('.present')
+// Change colour based on time
+var textArea = $('textarea');
+textArea.each(function() {
+    if ($(this).attr('data-time') == currentHour) {
+        $(this).addClass('present');
     }
-    else if (datatime < currentHour) {
-        datatime.addClass('.past')
+    else if ($(this).attr('data-time') < currentHour) {
+        $(this).addClass('past');
     }
     else {
-        datatime.addClass('.future')
+        $(this).addClass('future');
     }
-}
-
-// change colours dynamically
-$("div").each(colourChanger(this));
-
-// var timeBlocks = $('time-block');
-// timeBlocks.css('background','red');
-
-// timeBlocks.addClass('future')
-
-
-// for (i = 0; i < timeBlocks.length; i++) {
-//     this.colourChanger(this);
-//     this.addClass('.future')
-// }
+})
