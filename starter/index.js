@@ -18,15 +18,13 @@ textArea.each(function() {
     }
 })
 
-// get notes from local storage
+// Get notes from local storage
 textArea.each(function() {
     $(this).val(localStorage.getItem($(this).attr('data-time')));
 })
 
-
 // Save to local storage
 var BtnEl = $('.saveBtn');
-
 BtnEl.click(function() {
     // grab textarea next to clicked button
     let textField = $(this).prev();
@@ -35,12 +33,3 @@ BtnEl.click(function() {
     //store in local storage with data-time as key
     localStorage.setItem($(this).prev().attr('data-time'), notes);
 });
-
-
-// ! DEBUG 
-// let lastname09 = localStorage.getItem('09');
-// let lastname10 = localStorage.getItem('10');
-// let lastname11 = localStorage.getItem('11');
-// console.log("local storage09: " + lastname09);
-// console.log("local storage10: " + lastname10);
-// console.log("local storage11: " + lastname11);
