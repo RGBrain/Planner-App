@@ -69,3 +69,35 @@ textarea {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
+
+/* Media Query for small screens  */
+@media only screen and (max-width: 768px) {
+  .row {
+    margin-bottom: 50px;
+  }
+  textarea {
+    max-width: 90%;
+    border-bottom-left-radius: 15px;
+    border-bottom: 1px solid black;
+  }
+  .saveBtn {
+    max-width: 10%;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 0px;
+  }
+  .time-block {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+  .hour {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-right: 1px solid;
+  }
+}
